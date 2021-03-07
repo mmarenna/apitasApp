@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apitasUrl: 'http://localhost:8080'
+  apitasUrl: 'http://apalaplata.org'
 
 };
 
