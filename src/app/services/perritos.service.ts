@@ -19,4 +19,11 @@ export class PerritosService {
   public getListadoPerritos(){
     return this.executeQuery<PerroDTO[]>(`/api/perros`);
   }
+
+  getPerritoDetalle(id: string){
+    let perroDetalle = this.executeQuery<PerroDTO>(`/api/perros/${id}`)
+    console.log(perroDetalle);
+    return perroDetalle;
+  }
+  
 }

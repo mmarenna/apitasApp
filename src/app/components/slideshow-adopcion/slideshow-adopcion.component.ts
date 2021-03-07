@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PerroDTO } from '../../../../interfaces/interfaces';
+import { ModalController } from '@ionic/angular';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-slideshow-adopcion',
@@ -12,11 +14,23 @@ export class SlideshowAdopcionComponent implements OnInit {
 
   slideOpts = {
     slidersPerView: 1.3,
-    freeMode:true
+    freeMode:true,
+    spaceBetween: -5 
   };
   
-  constructor() { }
+  constructor( private modalCtrl: ModalController) { }
 
   ngOnInit() {}
+
+  async verDetalle(id: string){
+    const modal = await this.modalCtrl.create({
+      component: DetalleComponent,
+      componentProps:{
+        id
+      }
+    });
+    modal.present();
+    
+  }
 
 }
