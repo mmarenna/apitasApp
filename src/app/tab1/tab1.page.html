@@ -7,20 +7,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-slides >
-    <ion-slide *ngFor="let perro of listadoPerritos">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>{{perro.nombre}}</ion-card-title>
-          <ion-card-subtitle>{{perro.sexo}} - {{ perro.raza}}</ion-card-subtitle>
-        </ion-card-header>
-    
-        <ion-card-content>
-          {{perro.descripcion}}
-          <ion-img src="/assets/Porter.png"></ion-img>
-        </ion-card-content>
-      </ion-card>
 
-    </ion-slide>
-  </ion-slides>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <ion-label>Apitas en adopcion</ion-label>
+        <app-slideshow-adopcion [perritosAdopcion]="listadoPerritos"></app-slideshow-adopcion>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h4>Todos nuestros apitas</h4>
+        <app-slideshow-adopcion [perritosAdopcion]="listadoPerritos"></app-slideshow-adopcion>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

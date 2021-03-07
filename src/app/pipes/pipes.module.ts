@@ -8,6 +8,6 @@ import { ImagenPipe } from './imagen.pipe';
   declarations: [ImagenPipe],
   imports: [
     CommonModule
-  ],exports:[ ImagenPipe]
+  ],exports:[ImagenPipe]
 })
 export class PipesModule { }
